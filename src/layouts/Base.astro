@@ -1,0 +1,42 @@
+---
+import '../styles/global.css';
+import Footer from '../components/Footer.astro';
+interface Props { title: string; description?: string; image?: string; }
+const { title, description = 'عبدالرحمن البكري — مصمم موشن جرافيك: تحريك واجهات، تايبوغرافي عربي متحرك، تحريك شعارات، إعلانات وريلز.', image = '/media/thumbs/sign.jpg' } = Astro.props;
+const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : undefined;
+---
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <meta name="theme-color" content="#F4F0E6" />
+  {canonical && <link rel="canonical" href={canonical} />}
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={image} />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <script is:inline>
+    document.documentElement.classList.add('js');
+    // safety net: if scripts fail, never leave text hidden
+    setTimeout(function () { if (!document.documentElement.classList.contains('ready')) document.documentElement.classList.add('failsafe'); }, 3500);
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@700;800&family=Rubik:wght@400;500;600&family=Aref+Ruqaa:wght@700&family=Caveat:wght@700&display=swap" />
+  <slot name="head" />
+</head>
+<body>
+  <div class="page">
+    <slot />
+    <Footer />
+  </div>
+  <script>
+    import '../scripts/motion.js';
+    document.documentElement.classList.add('ready');
+  </script>
+</body>
+</html>

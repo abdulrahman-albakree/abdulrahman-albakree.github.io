@@ -1,0 +1,16 @@
+---
+import { site } from '../data/works.js';
+---
+<footer class="site-footer">
+  <svg class="wave" viewBox="0 0 1440 310" preserveAspectRatio="none" aria-hidden="true">
+    <defs><linearGradient id="wave" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7A3BFF"/><stop offset=".55" stop-color="#C24BD6"/><stop offset="1" stop-color="#F04E14"/></linearGradient></defs>
+    <path d="M0 90 C 240 20, 480 10, 720 60 S 1200 130, 1440 50 L 1440 310 L 0 310 Z" fill="url(#wave)" stroke="#151312" stroke-width="5" vector-effect="non-scaling-stroke"/>
+  </svg>
+  <div class="inner">
+    <nav class="socials" aria-label="حساباتي">
+      {site.socials.map((s) => <a class="d7 chip" href={s.href} target="_blank" rel="noopener">{s.label}</a>)}
+    </nav>
+    <span style="font-size: 16px"><span dir="ltr">{site.handle}</span> · © {site.name}</span>
+  </div>
+  <a class="d to-top wig" href="#top">للأعلى<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg></a>
+</footer>

@@ -1,0 +1,6 @@
+---
+// Short looping MP4 preview: loads only when near the viewport, plays only while visible.
+interface Props { src: string; poster?: string; label?: string; class?: string; }
+const { src, poster, label, class: cls = '' } = Astro.props;
+---
+<video class:list={['clip', cls]} data-src={src} poster={poster} muted loop playsinline preload="none" aria-label={label} aria-hidden={label ? undefined : 'true'}></video>

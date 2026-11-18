@@ -1,0 +1,9 @@
+---
+// Click-to-load Vimeo: shows a light thumbnail first, loads the player only on tap.
+interface Props { id: string; thumb: string; title: string; ratio?: number; }
+const { id, thumb, title, ratio } = Astro.props;
+---
+<button type="button" class="vfacade" data-vimeo={id} aria-label={`تشغيل: ${title}`} style={ratio ? `aspect-ratio: ${ratio}` : undefined}>
+  <img src={thumb} alt="" loading="lazy" decoding="async" />
+  <span class="play pulse"><svg width="38" height="38" viewBox="0 0 24 24" fill="#151312" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></span>
+</button>

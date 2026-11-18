@@ -1,0 +1,141 @@
+---
+import Base from '../../layouts/Base.astro';
+import Header from '../../components/Header.astro';
+import Vimeo from '../../components/Vimeo.astro';
+import Clip from '../../components/Clip.astro';
+import { works, site } from '../../data/works.js';
+import '../../styles/project.css';
+
+export function getStaticPaths() {
+  return works.map((w, i) => ({ params: { slug: w.slug }, props: { w, next: works[(i + 1) % works.length] } }));
+}
+const { w, next } = Astro.props;
+const tagColors = ['#6A2BFF', '#FFC42E', '#FF9FD6'];
+const isH = w.orientation === 'h';
+const fname = `${w.titleEn.replace(/[^A-Za-z0-9]+/g, '_').replace(/^_|_$/g, '')}_final.mp4`;
+---
+<Base title={`${w.title} · ${w.titleEn} — عبدالرحمن البكري`} description={w.about} image={w.thumb}>
+  <Header />
+  <main>
+    <!-- TITLE -->
+    <section class="p-title wrap">
+      <div class="p-tags reveal">
+        <span class="pill d chip" style={`background:${tagColors[0]};color:#F4F0E6`}>{w.type}</span>
+        <span class="pill d chip" style={`background:${tagColors[1]}`}>Motion Design</span>
+        <span class="pill d chip" style={`background:${tagColors[2]}`}>{w.orientationLabel}</span>
+      </div>
+      <h1 class="d words hfloat">{w.title}</h1>
+      <div class="cv en t sway" dir="ltr">{w.titleEn}</div>
+      <svg class="star bob" aria-hidden="true" width="90" height="90" viewBox="0 0 70 70" style="--r: 12deg"><path d="M35 4l8 22 23 1-18 14 7 23-20-13-20 13 7-23L4 27l23-1z" fill="#FF9FD6" stroke="#151312" stroke-width="3" stroke-linejoin="round"/></svg>
+    </section>
+
+    <!-- INFO STRIP -->
+    <section class="info hfloat reveal" aria-label="معلومات العمل">
+      <div><div class="cv sway">العميل</div><div class="d">{w.client}</div></div>
+      <div><div class="cv sway">المدة</div><div class="d">{w.duration}</div></div>
+      <div><div class="cv sway">دوري</div><div class="d">تصميم وتحريك</div></div>
+      <div><div class="cv sway">الأدوات</div><div class="d" dir="ltr" style="text-align:right">{w.tools}</div></div>
+      <div><div class="cv sway">السنة</div><div class="d">{w.year}</div></div>
+    </section>
+
+    <!-- VIDEO + INTRO -->
+    <section class="p-main wrap">
+      <div class:list={['p-player t float reveal', isH && 'p-player--h']}>
+        <div class="win-bar"><i></i><i></i><i></i><span class="fname" dir="ltr">{fname}</span></div>
+        <div class="screen"><Vimeo id={w.vimeo} thumb={w.thumb} title={w.title} ratio={w.ratio} /></div>
+        <div class="scrub" aria-hidden="true"><span class="playhead"></span></div>
+      </div>
+      <div class="p-text">
+        <div class="reveal">
+          <div class="h t sway" style="--tilt:-2deg">عن العمل</div>
+          <p class="drift">{w.about}</p>
+          <p class="en-about" dir="ltr" style="text-align:left">{w.aboutEn}</p>
+        </div>
+        <div class="p-skills reveal">
+          {w.skills.map((s) => <span class="pill d chip" dir="ltr">{s}</span>)}
+        </div>
+        <div class="p-links reveal">
+          <a class="btn btn--yellow d float" href={w.behance} target="_blank" rel="noopener">شاهد على Behance ↗</a>
+          <a class="btn d float2" href={`https://vimeo.com/${w.vimeo}`} target="_blank" rel="noopener">شاهد على Vimeo ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- TICKER -->
+    <div class="p-ticker ticker" aria-hidden="true">
+      <div class="ticker-track tickL d" style="--tk:60s">
+        {Array.from({ length: 10 }).map(() => <span>✦ {w.ticker.join(' ✦ ')}</span>)}
+      </div>
+    </div>
+
+    {w.slides && (
+      <section class="slides wrap" aria-label="شرائح العمل">
+        {w.slides.map((sl, i) => (
+          <figure class="slide reveal hfloat" style={`--rd:.05s`}>
+            <span class="slide-num d" aria-hidden="true">{['٠١','٠٢','٠٣','٠٤','٠٥','٠٦','٠٧','٠٨','٠٩','١٠'][i]}</span>
+            <div class="slide-media" style={`aspect-ratio:${sl.w}/${sl.h}`}>
+              <Clip src={sl.src} poster={sl.poster} label={`شريحة ${i + 1} من ${w.title}`} />
+            </div>
+          </figure>
+        ))}
+      </section>
+    )}
+
+    {!w.slides && w.gallery && (
+      <section class="p-sec wrap">
+        <div class="p-sec-h"><span class="d num" style="color:#6A2BFF">٠١</span><h2 class="d words hfloat">لقطات من العمل</h2></div>
+        <div class:list={['gallery', `gallery--${w.orientation}`, w.gallery.length === 1 && 'gallery--one']}>
+          {w.gallery.map((c, i) => (
+            <div class:list={['g-item t reveal', i % 2 ? 'float2' : 'float', w.orientation === 'v' ? 'vframe' : 'frame']}
+                 style={`--tilt:${['-2.5deg', '2deg', '-1deg', '1.5deg'][i % 4]};--rd:${(i % 4) * 0.08}s;background:#151312`}>
+              <Clip src={c.src} poster={c.poster} label={`لقطة من ${w.title}`} />
+            </div>
+          ))}
+        </div>
+      </section>
+    )}
+
+    {!w.slides && w.frames && (
+      <section class="p-sec" style="padding-top:100px">
+        <div class="wrap"><div class="p-sec-h"><span class="d num" style="color:#F04E14">٠٢</span><h2 class="d words hfloat">شريط المشاهد</h2></div></div>
+        <div class="strip" aria-label="لقطات من الفيديو">
+          <div class="ticker-track tickL" dir="ltr" style="--tk:44s">
+            {[...w.frames, ...w.frames].map((f, i) => <img src={f} alt="" loading="lazy" decoding="async" width="300" height="534" aria-hidden={i >= w.frames.length ? 'true' : undefined} />)}
+          </div>
+        </div>
+      </section>
+    )}
+
+    {!w.slides && !w.gallery && (
+      <section class="p-sec wrap">
+        <div class="p-sec-h"><span class="d num" style="color:#6A2BFF">٠١</span><h2 class="d words hfloat">لقطات من العمل</h2></div>
+        <!-- TODO: مقاطع MP4 قصيرة لهذا العمل (اطلب الملف من عبدالرحمن) -->
+        <div class="coming ph float reveal">
+          <span class="h sway">قريباً</span>
+          <span>[ مقاطع قصيرة من «{w.title}» — بانتظار ملف العمل ]</span>
+        </div>
+      </section>
+    )}
+
+    <!-- CREDITS -->
+    <section class="credits hfloat reveal">
+      <img class="credit-char" src="/media/character/albakree.svg" alt="" width="900" height="960" loading="lazy" />
+      <div>
+        <div class="h sway">الكريدت</div>
+        <div class="d who">تصميم وتحريك: <span dir="ltr">{site.nameEn}</span></div>
+        <div class="meta">العميل: {w.clientFull} · {w.year}</div>
+      </div>
+      <a class="btn btn--yellow d float" href="/#contact">ابدأ مشروعك ←</a>
+    </section>
+
+    <!-- NEXT -->
+    <section class="next wrap">
+      <div class="h sway">العمل التالي</div>
+      <a class="lift float2 reveal" href={`/work/${next.slug}/`}>
+        <span class="nt"><span class="d">{next.title}</span><span class="cv" dir="ltr" style="text-align:right">{next.titleEn}</span></span>
+        <span class:list={['thumb', next.orientation === 'h' && 'thumb--h']}><img src={next.thumb} alt="" loading="lazy" decoding="async" /></span>
+        <svg class="arr" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#151312" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+      </a>
+    </section>
+  </main>
+</Base>
