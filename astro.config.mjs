@@ -1,8 +1,8 @@
 import { defineConfig } from 'astro/config';
 
-// TODO: غيّر site للدومين النهائي بعد النشر على Vercel
+// الرابط الحالي على Cloudflare Pages — غيّره لو ربطت دومين خاص
 export default defineConfig({
-  site: 'https://albakree.vercel.app',
+  site: 'https://albakree.pages.dev',
   build: { format: 'directory', inlineStylesheets: 'always' },
   devToolbar: { enabled: false },
 });
