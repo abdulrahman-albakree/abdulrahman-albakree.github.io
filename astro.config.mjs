@@ -1,8 +1,8 @@
 import { defineConfig } from 'astro/config';
 
-// الرابط الحالي على Cloudflare Pages — غيّره لو ربطت دومين خاص
+// الرابط الأساسي: GitHub Pages (يفتح في اليمن). نسخة احتياط على albakree.pages.dev
 export default defineConfig({
-  site: 'https://albakree.pages.dev',
+  site: 'https://abdulrahman-albakree.github.io',
   build: { format: 'directory', inlineStylesheets: 'always' },
   devToolbar: { enabled: false },
 });
