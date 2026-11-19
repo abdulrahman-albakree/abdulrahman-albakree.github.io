@@ -1,0 +1,44 @@
+{
+  "published": true,
+  "order": 3,
+  "slug": "riyada",
+  "title": "تقربك أكثر من المستقبل",
+  "titleEn": "Riyada University",
+  "type": "موشن تعريفي",
+  "tag": "موشن تعريفي",
+  "client": "جامعة الريادة",
+  "clientFull": "جامعة الريادة",
+  "year": "٢٠٢٦",
+  "duration": "١:١٩ دقيقة",
+  "tools": "After Effects",
+  "orientation": "v",
+  "orientationLabel": "عمودي ٩:١٦",
+  "ratio": 0.5624,
+  "vimeo": "1239525259",
+  "behance": "https://www.behance.net/gallery/257661435/-Motion-Graphics",
+  "about": "تايبوغرافي عربي متحرك وعناصر ثلاثية الأبعاد بانتقالات سلسة على لوحة أحمر وأزرق هادئة.",
+  "aboutEn": "Arabic kinetic type and 3D elements with smooth transitions in a calm red-and-blue palette.",
+  "filters": [
+    "reels"
+  ],
+  "skills": [
+    "Motion Graphics",
+    "Arabic Typography",
+    "3D Elements",
+    "Transitions"
+  ],
+  "ticker": [
+    "تايبوغرافي عربي",
+    "ثلاثي الأبعاد",
+    "انتقالات",
+    "جامعة الريادة"
+  ],
+  "color": "#FFC42E",
+  "ink": "#151312",
+  "thumb": "/media/thumbs/riyada.jpg",
+  "clip": "",
+  "clipPoster": "",
+  "slides": [],
+  "gallery": [],
+  "frames": []
+}

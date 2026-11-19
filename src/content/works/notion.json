@@ -1,0 +1,53 @@
+{
+  "published": true,
+  "order": 4,
+  "slug": "notion",
+  "title": "Notion",
+  "titleEn": "From Chaos to Organization",
+  "type": "واجهات UI",
+  "tag": "تحريك واجهات",
+  "client": "شخصي · كونسبت",
+  "clientFull": "عمل شخصي (كونسبت)",
+  "year": "٢٠٢٦",
+  "duration": "٢٠ ثانية",
+  "tools": "After Effects",
+  "orientation": "v",
+  "orientationLabel": "عمودي",
+  "ratio": 0.7202,
+  "vimeo": "1189001374",
+  "behance": "https://www.behance.net/gallery/248780777/Notion-Motion-Graphics",
+  "about": "من الفوضى إلى التنظيم: مهام مبعثرة تتحول بالحركة إلى واجهة مرتبة.",
+  "aboutEn": "From chaos to order: scattered tasks resolve into a clean interface through motion.",
+  "filters": [
+    "ui",
+    "reels"
+  ],
+  "skills": [
+    "Motion Graphics",
+    "UI Animation",
+    "Concept"
+  ],
+  "ticker": [
+    "من الفوضى",
+    "إلى التنظيم",
+    "واجهات",
+    "Notion"
+  ],
+  "color": "#FF9FD6",
+  "ink": "#151312",
+  "thumb": "/media/thumbs/notion.jpg",
+  "clip": "/media/notion/chaos.mp4",
+  "clipPoster": "/media/notion/posters/chaos.jpg",
+  "slides": [],
+  "gallery": [
+    {
+      "video": "/media/notion/chaos.mp4",
+      "poster": "/media/notion/posters/chaos.jpg"
+    },
+    {
+      "video": "/media/notion/order.mp4",
+      "poster": "/media/notion/posters/order.jpg"
+    }
+  ],
+  "frames": []
+}

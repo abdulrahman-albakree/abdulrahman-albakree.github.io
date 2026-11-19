@@ -1,190 +1,57 @@
-// بيانات الأعمال — المصدر: works.md (بيهانس + نوشن). لا تضف أرقاماً أو عملاء غير موجودين هنا.
-// orientation: 'v' عمودي، 'h' أفقي. ratio = عرض/ارتفاع (من فيميو).
-// slides: شرائح بيهانس (GIF محوّل لـ MP4) تُعرض في صفحة العمل بالترتيب. clip: مقطع MP4 قصير للمعاينة. gallery: مقاطع صفحة العمل. الريادة: ما لها مقاطع بعد (صورة فيميو مؤقتاً).
+// Site data loader.
+// The editable data lives in JSON files managed from the dashboard (Pages CMS, see .pages.yml):
+//   src/content/works/*.json  -> one file per work
+//   src/data/site.json        -> contact info + socials
+//   src/data/clients.json     -> client logos
+// Do not add numbers, clients or stats that Abdulrahman did not provide.
+import siteData from './site.json';
+import clientsData from './clients.json';
 
-export const works = [
-  {
-    slug: 'sign',
-    title: 'كيف جاء ساين؟',
-    titleEn: 'The Sign Burger Story',
-    client: 'ثندر · إنفينيتي',
-    clientFull: 'ثندر (إنفينيتي)',
-    type: 'إعلان / قصة علامة',
-    tag: 'قصة علامة',
-    orientation: 'v',
-    orientationLabel: 'عمودي ٩:١٦',
-    ratio: 960 / 1707,
-    duration: '١:٣٠ دقيقة',
-    tools: 'After Effects · Premiere',
-    year: '٢٠٢٦',
-    vimeo: '1238327140',
-    behance: 'https://www.behance.net/gallery/258645505/-The-Sign-Burger-Story-Motion-Design',
-    about: 'فيديو عمودي صمّمته وحرّكته بالكامل، يمزج تحريك الواجهات بإيقاع مونتاج الريلز. تايبوغرافي عربي متحرك، وانتقالات بين لوحات بصرية مختلفة، وتصميم صوتي يربط كل حركة بمؤثرها.',
-    aboutEn: 'UI animation cut to reel rhythm: kinetic Arabic type, board-to-board transitions and sound tied to every move.',
-    skills: ['Motion Graphics', 'Animation', 'Arabic Typography', 'UI Animation'],
-    ticker: ['تحريك', 'تايبوغرافي', 'انتقالات', 'تصميم صوت', 'ساين برجر'],
-    filters: ['ads', 'stories', 'ui', 'reels'],
-    thumb: '/media/thumbs/sign.jpg',
-    clip: { src: '/media/sign/chat.mp4', poster: '/media/sign/posters/chat.jpg' },
-    slides: [
-      { src: '/media/sign/slides/night.mp4', poster: '/media/sign/slides/night.jpg', w: 1200, h: 686 },
-      { src: '/media/sign/slides/cork.mp4', poster: '/media/sign/slides/cork.jpg', w: 1200, h: 686 },
-      { src: '/media/sign/slides/chat.mp4', poster: '/media/sign/slides/chat.jpg', w: 1200, h: 686 },
-      { src: '/media/sign/slides/grid.mp4', poster: '/media/sign/slides/grid.jpg', w: 1200, h: 738 },
-      { src: '/media/sign/slides/timeline.mp4', poster: '/media/sign/slides/timeline.jpg', w: 1200, h: 858 },
-      { src: '/media/sign/slides/voice.mp4', poster: '/media/sign/slides/voice.jpg', w: 1200, h: 652 },
-      { src: '/media/sign/slides/close.mp4', poster: '/media/sign/slides/close.jpg', w: 1200, h: 772 },
-    ],
-    color: '#6A2BFF', ink: '#F4F0E6',
-  },
-  {
-    slug: 'dinar',
-    title: 'قصة مشروع دينار',
-    titleEn: 'Dinar Story',
-    client: 'ثندر · إنفينيتي',
-    clientFull: 'ثندر (إنفينيتي)',
-    type: 'قصة مشروع',
-    tag: 'قصة مشروع',
-    orientation: 'v',
-    orientationLabel: 'عمودي ٩:١٦',
-    ratio: 960 / 1707,
-    duration: '١:٤٠ دقيقة',
-    tools: 'After Effects · Premiere',
-    year: '٢٠٢٦',
-    vimeo: '1247007710',
-    behance: 'https://www.behance.net/gallery/258540707/-Dinar-Story-Motion-Design',
-    about: 'واجهات وتايبوغرافي متحرك يمشي على إيقاع التعليق الصوتي والمؤثرات.',
-    aboutEn: 'UI animation and kinetic typography paced to the voice-over and sound effects.',
-    skills: ['Motion Graphics', 'UI Animation', 'Kinetic Typography', 'Sound Design'],
-    ticker: ['قصة مشروع', 'واجهات', 'تايبوغرافي', 'تعليق صوتي', 'دينار'],
-    filters: ['stories', 'ui', 'reels'],
-    thumb: '/media/thumbs/dinar.jpg',
-    clip: { src: '/media/dinar/intro.mp4', poster: '/media/dinar/posters/intro.jpg' },
-    slides: [
-      { src: '/media/dinar/slides/flow.mp4', poster: '/media/dinar/slides/flow.jpg', w: 1200, h: 258 },
-      { src: '/media/dinar/slides/colors.mp4', poster: '/media/dinar/slides/colors.jpg', w: 1200, h: 686 },
-      { src: '/media/dinar/slides/timeline.mp4', poster: '/media/dinar/slides/timeline.jpg', w: 1200, h: 600 },
-      { src: '/media/dinar/slides/sound.mp4', poster: '/media/dinar/slides/sound.jpg', w: 1200, h: 582 },
-      { src: '/media/dinar/slides/stack.mp4', poster: '/media/dinar/slides/stack.jpg', w: 1200, h: 514 },
-      { src: '/media/dinar/slides/strip.mp4', poster: '/media/dinar/slides/strip.jpg', w: 1200, h: 514 },
-      { src: '/media/dinar/slides/phones.mp4', poster: '/media/dinar/slides/phones.jpg', w: 1200, h: 686 },
-    ],
-    gallery: [{ src: '/media/dinar/intro.mp4', poster: '/media/dinar/posters/intro.jpg' }, { src: '/media/dinar/people.mp4', poster: '/media/dinar/posters/people.jpg' }, { src: '/media/dinar/board.mp4', poster: '/media/dinar/posters/board.jpg' }, { src: '/media/dinar/chat.mp4', poster: '/media/dinar/posters/chat.jpg' }, { src: '/media/dinar/type.mp4', poster: '/media/dinar/posters/type.jpg' }, { src: '/media/dinar/edit.mp4', poster: '/media/dinar/posters/edit.jpg' }, { src: '/media/dinar/close.mp4', poster: '/media/dinar/posters/close.jpg' }],
-    frames: [3, 10, 14, 22, 30, 38, 46, 54, 60, 66, 74, 80, 86, 95].map((t) => `/media/dinar/frames/f_${t}.jpg`),
-    color: '#F04E14', ink: '#151312',
-  },
-  {
-    slug: 'riyada',
-    title: 'تقربك أكثر من المستقبل',
-    titleEn: 'Riyada University',
-    client: 'جامعة الريادة',
-    clientFull: 'جامعة الريادة',
-    type: 'موشن تعريفي',
-    tag: 'موشن تعريفي',
-    orientation: 'v',
-    orientationLabel: 'عمودي ٩:١٦',
-    ratio: 960 / 1707,
-    duration: '١:١٩ دقيقة',
-    tools: 'After Effects',
-    year: '٢٠٢٦',
-    vimeo: '1239525259',
-    behance: 'https://www.behance.net/gallery/257661435/-Motion-Graphics',
-    about: 'تايبوغرافي عربي متحرك وعناصر ثلاثية الأبعاد بانتقالات سلسة على لوحة أحمر وأزرق هادئة.',
-    aboutEn: 'Arabic kinetic type and 3D elements with smooth transitions in a calm red-and-blue palette.',
-    skills: ['Motion Graphics', 'Arabic Typography', '3D Elements', 'Transitions'],
-    ticker: ['تايبوغرافي عربي', 'ثلاثي الأبعاد', 'انتقالات', 'جامعة الريادة'],
-    filters: ['reels'],
-    thumb: '/media/thumbs/riyada.jpg',
-    color: '#FFC42E', ink: '#151312',
-  },
-  {
-    slug: 'notion',
-    title: 'Notion',
-    titleEn: 'From Chaos to Organization',
-    client: 'شخصي · كونسبت',
-    clientFull: 'عمل شخصي (كونسبت)',
-    type: 'واجهات UI',
-    tag: 'تحريك واجهات',
-    orientation: 'v',
-    orientationLabel: 'عمودي',
-    ratio: 960 / 1333,
-    duration: '٢٠ ثانية',
-    tools: 'After Effects',
-    year: '٢٠٢٦',
-    vimeo: '1189001374',
-    behance: 'https://www.behance.net/gallery/248780777/Notion-Motion-Graphics',
-    about: 'من الفوضى إلى التنظيم: مهام مبعثرة تتحول بالحركة إلى واجهة مرتبة.',
-    aboutEn: 'From chaos to order: scattered tasks resolve into a clean interface through motion.',
-    skills: ['Motion Graphics', 'UI Animation', 'Concept'],
-    ticker: ['من الفوضى', 'إلى التنظيم', 'واجهات', 'Notion'],
-    filters: ['ui', 'reels'],
-    thumb: '/media/thumbs/notion.jpg',
-    clip: { src: '/media/notion/chaos.mp4', poster: '/media/notion/posters/chaos.jpg' },
-    gallery: [{ src: '/media/notion/chaos.mp4', poster: '/media/notion/posters/chaos.jpg' }, { src: '/media/notion/order.mp4', poster: '/media/notion/posters/order.jpg' }],
-    color: '#FF9FD6', ink: '#151312',
-  },
-  {
-    slug: 'sahlah',
-    title: 'سهلة',
-    titleEn: 'Sahlah Ad',
-    client: 'شخصي · متجري',
-    clientFull: 'عمل شخصي (متجره)',
-    type: 'إعلان',
-    tag: 'إعلان',
-    orientation: 'h',
-    orientationLabel: 'أفقي ١٦:٩',
-    ratio: 960 / 540,
-    duration: '٢٢ ثانية',
-    tools: 'After Effects',
-    year: '٢٠٢٦',
-    vimeo: '1188736987',
-    behance: 'https://www.behance.net/gallery/248661261/Sahlah-Motion-Graphics-Ad',
-    about: 'فكرة محادثة وبطاقات اشتراكات ثلاثية الأبعاد، بتدرّجات ناعمة وعناصر مدوّرة.',
-    aboutEn: 'A chat-led concept with 3D subscription cards, soft gradients and rounded UI.',
-    skills: ['Motion Graphics', 'Ad', '3D Cards', 'UI Animation'],
-    ticker: ['إعلان', 'محادثة', 'بطاقات ثلاثية الأبعاد', 'سهلة'],
-    filters: ['ads', 'ui'],
-    thumb: '/media/thumbs/sahlah.jpg',
-    clip: { src: '/media/sahlah/cards.mp4', poster: '/media/sahlah/posters/cards.jpg' },
-    gallery: [{ src: '/media/sahlah/chat.mp4', poster: '/media/sahlah/posters/chat.jpg' }, { src: '/media/sahlah/cards.mp4', poster: '/media/sahlah/posters/cards.jpg' }],
-    color: '#151312', ink: '#F4F0E6',
-  },
-  {
-    slug: 'smartsoft',
-    title: 'Smart soft',
-    titleEn: 'Logo Animation',
-    client: 'Smart soft',
-    clientFull: 'Smart soft',
-    type: 'تحريك شعار',
-    tag: 'تحريك شعار',
-    orientation: 'h',
-    orientationLabel: 'أفقي',
-    ratio: 960 / 758,
-    duration: '٨ ثوانٍ',
-    tools: 'After Effects',
-    year: '٢٠٢٦',
-    vimeo: '1156409664',
-    behance: 'https://www.behance.net/gallery/242465589/Smart-soft-logo-animation',
-    about: 'شعار يلخّص مجال الشركة التقني في ثوانٍ بحركة سلسة وحديثة.',
-    aboutEn: "A logo reveal that sums up the company's tech field in seconds.",
-    skills: ['Logo Animation', 'Motion Graphics'],
-    ticker: ['تحريك شعار', 'هوية', 'Smart soft'],
-    filters: ['logos'],
-    thumb: '/media/thumbs/smartsoft.jpg',
-    clip: { src: '/media/smartsoft/logo.mp4', poster: '/media/smartsoft/posters/logo.jpg' },
-    gallery: [{ src: '/media/smartsoft/logo.mp4', poster: '/media/smartsoft/posters/logo.jpg' }],
-    color: '#FFFDF7', ink: '#151312',
-  },
-];
+const files = import.meta.glob('../content/works/*.json', { eager: true, import: 'default' });
 
-// شعارات العملاء (نسخة بلون الحبر من ملفات المشاريع). logo فارغ = يظهر الاسم كنص.
-export const clients = [
-  { name: 'Thunder Production', logo: '/media/clients/thunder.png', w: 360, h: 100 },
-  { name: 'Infinity E-Marketing', logo: '/media/clients/infinity.png', w: 360, h: 86 },
-  { name: 'Zohal Film Production', logo: '/media/clients/zohal.png', w: 360, h: 163 },
-  { name: 'Smart soft', logo: '/media/clients/smartsoft.png', w: 360, h: 111 },
-  { name: 'جامعة الريادة', logo: '' }, // TODO: شعار الجامعة من عبدالرحمن
-];
+const clean = (v) => (typeof v === 'string' ? v.trim() : v);
+const list = (v) => (Array.isArray(v) ? v.filter((x) => x !== null && x !== undefined && x !== '') : []);
+
+export const works = Object.entries(files)
+  .map(([path, w]) => {
+    const slug = clean(w.slug) || path.split('/').pop().replace(/\.json$/, '');
+    const orientation = w.orientation === 'h' ? 'h' : 'v';
+    const ratio = Number(w.ratio) || (orientation === 'h' ? 16 / 9 : 9 / 16);
+    const thumb = clean(w.thumb) || '';
+    return {
+      ...w,
+      slug,
+      orientation,
+      ratio,
+      thumb,
+      order: Number(w.order) || 999,
+      published: w.published !== false,
+      filters: list(w.filters),
+      skills: list(w.skills),
+      ticker: list(w.ticker).length ? list(w.ticker) : [w.title],
+      color: clean(w.color) || '#FFC42E',
+      ink: clean(w.ink) || '#151312',
+      clip: clean(w.clip) ? { src: clean(w.clip), poster: clean(w.clipPoster) || thumb } : null,
+      slides: list(w.slides)
+        .filter((s) => s && s.video)
+        .map((s) => ({ src: s.video, poster: s.poster || '', w: Number(s.w) || 0, h: Number(s.h) || 0 })),
+      gallery: list(w.gallery)
+        .filter((s) => s && s.video)
+        .map((s) => ({ src: s.video, poster: s.poster || '' })),
+      frames: list(w.frames),
+    };
+  })
+  .filter((w) => w.published)
+  .sort((a, b) => a.order - b.order);
+
+// empty lists behave like "not set" in the templates
+works.forEach((w) => {
+  if (!w.slides.length) w.slides = null;
+  if (!w.gallery.length) w.gallery = null;
+  if (!w.frames.length) w.frames = null;
+});
+
+export const clients = list(clientsData.clients);
 
 export const filters = [
   { id: 'all', label: 'الكل' },
@@ -196,15 +63,10 @@ export const filters = [
 ];
 
 export const site = {
-  name: 'عبدالرحمن البكري',
-  nameEn: 'Abdulrahman Albakree',
-  handle: '@abdulrahmanalbakree',
-  whatsapp: '967776193354', // بصيغة wa.me: مفتاح الدولة بدون + أو مسافات
-  email: 'albakreegraphic@gmail.com',
-  socials: [
-    { label: 'Instagram', href: 'https://www.instagram.com/abdulrahmanalbakree' },
-    { label: 'Behance', href: 'https://www.behance.net/albakreegraphic' },
-    { label: 'TikTok', href: 'https://www.tiktok.com/@abdulrahmanalbakree' },
-    { label: 'Facebook', href: 'https://www.facebook.com/abdulrahmanalbakree' },
-  ],
+  name: siteData.name,
+  nameEn: siteData.nameEn,
+  handle: siteData.handle,
+  whatsapp: clean(siteData.whatsapp) || '',
+  email: clean(siteData.email) || '',
+  socials: list(siteData.socials),
 };

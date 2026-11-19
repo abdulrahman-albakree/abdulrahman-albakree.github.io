@@ -164,7 +164,7 @@ const nums = ['٠١', '٠٢', '٠٣', '٠٤', '٠٥', '٠٦'];
           <div class="pc-media" style={`background:${w.color}`}>
             <span class="pc-num d">{nums[i]}</span>
             <span class="pill d7 pc-type chip">{w.tag}</span>
-            <div class={`pc-frame pc-frame--${w.slug === 'notion' ? 'n' : w.orientation}`} style={`rotate:${i % 2 ? '3deg' : '-3deg'}`}>
+            <div class={`pc-frame pc-frame--${w.orientation}`} style={`rotate:${i % 2 ? '3deg' : '-3deg'};${w.orientation === 'v' ? `aspect-ratio:${w.ratio}` : ''}`}>
               {w.clip
                 ? <Clip src={w.clip.src} poster={w.clip.poster} />
                 : <img src={w.thumb} alt="" loading="lazy" decoding="async" />}
@@ -223,7 +223,7 @@ const nums = ['٠١', '٠٢', '٠٣', '٠٤', '٠٥', '٠٦'];
     <div class="client-row">
       {clients.map((c, i) => (
         <span class={`client d t reveal ${i % 2 ? 'float2' : 'float'}`} style={`--tilt:${['-1.5deg', '1deg', '-.8deg', '1.8deg', '-1.2deg'][i % 5]};--rd:${i * 0.08}s`}>
-          {c.logo ? <img src={c.logo} alt={c.name} width={c.w} height={c.h} loading="lazy" decoding="async" /> : c.name}
+          {c.logo ? <img src={c.logo} alt={c.name} width={c.w || undefined} height={c.h || undefined} loading="lazy" decoding="async" /> : c.name}
         </span>
       ))}
     </div>

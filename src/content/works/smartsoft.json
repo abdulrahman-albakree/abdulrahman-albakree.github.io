@@ -1,0 +1,46 @@
+{
+  "published": true,
+  "order": 6,
+  "slug": "smartsoft",
+  "title": "Smart soft",
+  "titleEn": "Logo Animation",
+  "type": "تحريك شعار",
+  "tag": "تحريك شعار",
+  "client": "Smart soft",
+  "clientFull": "Smart soft",
+  "year": "٢٠٢٦",
+  "duration": "٨ ثوانٍ",
+  "tools": "After Effects",
+  "orientation": "h",
+  "orientationLabel": "أفقي",
+  "ratio": 1.2665,
+  "vimeo": "1156409664",
+  "behance": "https://www.behance.net/gallery/242465589/Smart-soft-logo-animation",
+  "about": "شعار يلخّص مجال الشركة التقني في ثوانٍ بحركة سلسة وحديثة.",
+  "aboutEn": "A logo reveal that sums up the company's tech field in seconds.",
+  "filters": [
+    "logos"
+  ],
+  "skills": [
+    "Logo Animation",
+    "Motion Graphics"
+  ],
+  "ticker": [
+    "تحريك شعار",
+    "هوية",
+    "Smart soft"
+  ],
+  "color": "#FFFDF7",
+  "ink": "#151312",
+  "thumb": "/media/thumbs/smartsoft.jpg",
+  "clip": "/media/smartsoft/logo.mp4",
+  "clipPoster": "/media/smartsoft/posters/logo.jpg",
+  "slides": [],
+  "gallery": [
+    {
+      "video": "/media/smartsoft/logo.mp4",
+      "poster": "/media/smartsoft/posters/logo.jpg"
+    }
+  ],
+  "frames": []
+}

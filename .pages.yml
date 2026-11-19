@@ -1,0 +1,252 @@
+# لوحة تحكم الموقع (Pages CMS) — https://app.pagescms.org
+# أي حفظ من اللوحة يرسل تعديل لـ GitHub، وCloudflare ينشر الموقع تلقائياً خلال دقيقة أو دقيقتين.
+
+media:
+  input: public/media
+  output: /media
+
+content:
+  # ================= الأعمال =================
+  - name: works
+    label: الأعمال
+    description: كل عمل في ملف لحاله. أضف عمل جديد، أو اضغط على عمل لتعديله.
+    type: collection
+    path: src/content/works
+    format: json
+    filename: "{fields.slug}.json"
+    view:
+      primary: title
+      fields: [title, order, published]
+      sort: [order]
+      default:
+        sort: order
+        order: asc
+    fields:
+      - name: published
+        label: ظاهر في الموقع
+        description: شيل العلامة عشان تخفي العمل بدون ما تحذفه.
+        type: boolean
+        default: true
+      - name: order
+        label: الترتيب
+        description: رقم أصغر = يطلع أول (١ هو الأول).
+        type: number
+        required: true
+      - name: slug
+        label: الاسم في الرابط
+        description: بالإنجليزي بدون مسافات، مثل dinar — يصير الرابط /work/dinar/ . لا تغيّره بعد النشر.
+        type: string
+        required: true
+        pattern:
+          regex: "^[a-z0-9-]+$"
+          message: حروف إنجليزية صغيرة وأرقام وشرطة (-) بس
+      - name: title
+        label: اسم العمل (عربي)
+        type: string
+        required: true
+      - name: titleEn
+        label: اسم العمل (إنجليزي)
+        type: string
+      - name: type
+        label: نوع العمل
+        description: مثل «إعلان» أو «قصة مشروع» — يطلع فوق العنوان في صفحة العمل.
+        type: string
+      - name: tag
+        label: الوسم على الكرت
+        description: كلمة قصيرة تطلع على كرت العمل في الرئيسية.
+        type: string
+      - name: client
+        label: العميل (مختصر)
+        description: يطلع على الكرت، مثل «ثندر · إنفينيتي».
+        type: string
+      - name: clientFull
+        label: العميل (كامل)
+        description: يطلع في الكريدت آخر صفحة العمل.
+        type: string
+      - name: year
+        label: السنة
+        type: string
+      - name: duration
+        label: المدة
+        description: مثل «١:٣٠ دقيقة» أو «٢٢ ثانية».
+        type: string
+      - name: tools
+        label: الأدوات
+        type: string
+        default: After Effects
+      - name: orientation
+        label: اتجاه الفيديو
+        type: select
+        required: true
+        options:
+          values:
+            - value: v
+              label: عمودي
+            - value: h
+              label: أفقي
+      - name: orientationLabel
+        label: اتجاه الفيديو (النص الظاهر)
+        description: مثل «عمودي ٩:١٦» أو «أفقي ١٦:٩».
+        type: string
+      - name: ratio
+        label: نسبة الفيديو (عرض ÷ ارتفاع)
+        description: عمودي ٩:١٦ = 0.5625 · أفقي ١٦:٩ = 1.7778 · مربع = 1
+        type: number
+      - name: vimeo
+        label: رقم الفيديو في فيميو
+        description: الأرقام اللي في آخر رابط فيميو، مثل 1238327140 — هذا الفيديو الكامل اللي يشتغل في صفحة العمل.
+        type: string
+        required: true
+      - name: behance
+        label: رابط بيهانس
+        type: string
+      - name: about
+        label: نبذة عن العمل (عربي)
+        type: text
+      - name: aboutEn
+        label: نبذة عن العمل (إنجليزي)
+        type: text
+      - name: filters
+        label: يظهر تحت أي تصنيف
+        type: select
+        options:
+          multiple: true
+          values:
+            - value: ads
+              label: إعلانات
+            - value: stories
+              label: قصص مشاريع
+            - value: ui
+              label: واجهات
+            - value: logos
+              label: شعارات
+            - value: reels
+              label: ريلز
+      - name: skills
+        label: المهارات (كبسولات صفحة العمل)
+        type: string
+        list: true
+      - name: ticker
+        label: كلمات الشريط المتحرك
+        type: string
+        list: true
+      - name: color
+        label: لون الكرت
+        description: لون خلفية الكرت في الرئيسية، مثل #6A2BFF
+        type: string
+        default: "#FFC42E"
+      - name: ink
+        label: لون الكتابة على الكرت
+        type: string
+        default: "#151312"
+      - name: thumb
+        label: صورة الغلاف
+        description: تطلع قبل تشغيل الفيديو، وفي الكرت لو ما فيه مقطع معاينة.
+        type: image
+      - name: clip
+        label: مقطع المعاينة (MP4 قصير)
+        description: مقطع ٨ ثواني تقريباً بدون صوت، يتحرك في كرت العمل. خليه أقل من ١MB.
+        type: file
+        options:
+          extensions: [mp4, webm]
+      - name: clipPoster
+        label: صورة مقطع المعاينة
+        type: image
+      - name: slides
+        label: الشرائح (مثل بيهانس)
+        description: تطلع في صفحة العمل ورا بعض بالترتيب.
+        type: object
+        list: true
+        fields:
+          - name: video
+            label: فيديو الشريحة (MP4)
+            type: file
+            options:
+              extensions: [mp4, webm]
+          - name: poster
+            label: صورة الشريحة
+            type: image
+          - name: w
+            label: العرض (اختياري)
+            type: number
+          - name: h
+            label: الارتفاع (اختياري)
+            type: number
+      - name: gallery
+        label: لقطات من العمل (تطلع لو ما فيه شرائح)
+        type: object
+        list: true
+        fields:
+          - name: video
+            label: المقطع (MP4)
+            type: file
+            options:
+              extensions: [mp4, webm]
+          - name: poster
+            label: الصورة
+            type: image
+      - name: frames
+        label: شريط المشاهد (صور)
+        type: image
+        list: true
+
+  # ================= بياناتي =================
+  - name: site
+    label: بياناتي والتواصل
+    type: file
+    path: src/data/site.json
+    format: json
+    fields:
+      - name: name
+        label: الاسم (عربي)
+        type: string
+      - name: nameEn
+        label: الاسم (إنجليزي) — يطلع في الكريدت
+        type: string
+      - name: handle
+        label: المعرّف
+        type: string
+      - name: whatsapp
+        label: رقم الواتساب
+        description: مع مفتاح الدولة بدون + أو مسافات، مثل 967776193354
+        type: string
+      - name: email
+        label: الإيميل
+        type: string
+      - name: socials
+        label: الحسابات (تطلع في أسفل الموقع)
+        type: object
+        list: true
+        fields:
+          - name: label
+            label: اسم المنصة
+            type: string
+          - name: href
+            label: الرابط
+            type: string
+
+  # ================= العملاء =================
+  - name: clients
+    label: العملاء
+    type: file
+    path: src/data/clients.json
+    format: json
+    fields:
+      - name: clients
+        label: العملاء
+        description: لو ما فيه شعار يطلع الاسم مكتوب.
+        type: object
+        list: true
+        fields:
+          - name: name
+            label: اسم العميل
+            type: string
+          - name: logo
+            label: الشعار (PNG شفاف)
+            type: image
+          - name: w
+            label: عرض الشعار (اختياري)
+            type: number
+          - name: h
+            label: ارتفاع الشعار (اختياري)
+            type: number

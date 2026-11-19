@@ -1,0 +1,91 @@
+{
+  "published": true,
+  "order": 1,
+  "slug": "sign",
+  "title": "كيف جاء ساين؟",
+  "titleEn": "The Sign Burger Story",
+  "type": "إعلان / قصة علامة",
+  "tag": "قصة علامة",
+  "client": "ثندر · إنفينيتي",
+  "clientFull": "ثندر (إنفينيتي)",
+  "year": "٢٠٢٦",
+  "duration": "١:٣٠ دقيقة",
+  "tools": "After Effects · Premiere",
+  "orientation": "v",
+  "orientationLabel": "عمودي ٩:١٦",
+  "ratio": 0.5624,
+  "vimeo": "1238327140",
+  "behance": "https://www.behance.net/gallery/258645505/-The-Sign-Burger-Story-Motion-Design",
+  "about": "فيديو عمودي صمّمته وحرّكته بالكامل، يمزج تحريك الواجهات بإيقاع مونتاج الريلز. تايبوغرافي عربي متحرك، وانتقالات بين لوحات بصرية مختلفة، وتصميم صوتي يربط كل حركة بمؤثرها.",
+  "aboutEn": "UI animation cut to reel rhythm: kinetic Arabic type, board-to-board transitions and sound tied to every move.",
+  "filters": [
+    "ads",
+    "stories",
+    "ui",
+    "reels"
+  ],
+  "skills": [
+    "Motion Graphics",
+    "Animation",
+    "Arabic Typography",
+    "UI Animation"
+  ],
+  "ticker": [
+    "تحريك",
+    "تايبوغرافي",
+    "انتقالات",
+    "تصميم صوت",
+    "ساين برجر"
+  ],
+  "color": "#6A2BFF",
+  "ink": "#F4F0E6",
+  "thumb": "/media/thumbs/sign.jpg",
+  "clip": "/media/sign/chat.mp4",
+  "clipPoster": "/media/sign/posters/chat.jpg",
+  "slides": [
+    {
+      "video": "/media/sign/slides/night.mp4",
+      "poster": "/media/sign/slides/night.jpg",
+      "w": 1200,
+      "h": 686
+    },
+    {
+      "video": "/media/sign/slides/cork.mp4",
+      "poster": "/media/sign/slides/cork.jpg",
+      "w": 1200,
+      "h": 686
+    },
+    {
+      "video": "/media/sign/slides/chat.mp4",
+      "poster": "/media/sign/slides/chat.jpg",
+      "w": 1200,
+      "h": 686
+    },
+    {
+      "video": "/media/sign/slides/grid.mp4",
+      "poster": "/media/sign/slides/grid.jpg",
+      "w": 1200,
+      "h": 738
+    },
+    {
+      "video": "/media/sign/slides/timeline.mp4",
+      "poster": "/media/sign/slides/timeline.jpg",
+      "w": 1200,
+      "h": 858
+    },
+    {
+      "video": "/media/sign/slides/voice.mp4",
+      "poster": "/media/sign/slides/voice.jpg",
+      "w": 1200,
+      "h": 652
+    },
+    {
+      "video": "/media/sign/slides/close.mp4",
+      "poster": "/media/sign/slides/close.jpg",
+      "w": 1200,
+      "h": 772
+    }
+  ],
+  "gallery": [],
+  "frames": []
+}

@@ -73,7 +73,7 @@ const fname = `${w.titleEn.replace(/[^A-Za-z0-9]+/g, '_').replace(/^_|_$/g, '')}
         {w.slides.map((sl, i) => (
           <figure class="slide reveal hfloat" style={`--rd:.05s`}>
             <span class="slide-num d" aria-hidden="true">{['٠١','٠٢','٠٣','٠٤','٠٥','٠٦','٠٧','٠٨','٠٩','١٠'][i]}</span>
-            <div class="slide-media" style={`aspect-ratio:${sl.w}/${sl.h}`}>
+            <div class="slide-media" style={sl.w && sl.h ? `aspect-ratio:${sl.w}/${sl.h}` : undefined}>
               <Clip src={sl.src} poster={sl.poster} label={`شريحة ${i + 1} من ${w.title}`} />
             </div>
           </figure>

@@ -1,0 +1,54 @@
+{
+  "published": true,
+  "order": 5,
+  "slug": "sahlah",
+  "title": "سهلة",
+  "titleEn": "Sahlah Ad",
+  "type": "إعلان",
+  "tag": "إعلان",
+  "client": "شخصي · متجري",
+  "clientFull": "عمل شخصي (متجره)",
+  "year": "٢٠٢٦",
+  "duration": "٢٢ ثانية",
+  "tools": "After Effects",
+  "orientation": "h",
+  "orientationLabel": "أفقي ١٦:٩",
+  "ratio": 1.7778,
+  "vimeo": "1188736987",
+  "behance": "https://www.behance.net/gallery/248661261/Sahlah-Motion-Graphics-Ad",
+  "about": "فكرة محادثة وبطاقات اشتراكات ثلاثية الأبعاد، بتدرّجات ناعمة وعناصر مدوّرة.",
+  "aboutEn": "A chat-led concept with 3D subscription cards, soft gradients and rounded UI.",
+  "filters": [
+    "ads",
+    "ui"
+  ],
+  "skills": [
+    "Motion Graphics",
+    "Ad",
+    "3D Cards",
+    "UI Animation"
+  ],
+  "ticker": [
+    "إعلان",
+    "محادثة",
+    "بطاقات ثلاثية الأبعاد",
+    "سهلة"
+  ],
+  "color": "#151312",
+  "ink": "#F4F0E6",
+  "thumb": "/media/thumbs/sahlah.jpg",
+  "clip": "/media/sahlah/cards.mp4",
+  "clipPoster": "/media/sahlah/posters/cards.jpg",
+  "slides": [],
+  "gallery": [
+    {
+      "video": "/media/sahlah/chat.mp4",
+      "poster": "/media/sahlah/posters/chat.jpg"
+    },
+    {
+      "video": "/media/sahlah/cards.mp4",
+      "poster": "/media/sahlah/posters/cards.jpg"
+    }
+  ],
+  "frames": []
+}

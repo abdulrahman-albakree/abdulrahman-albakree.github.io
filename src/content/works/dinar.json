@@ -1,0 +1,134 @@
+{
+  "published": true,
+  "order": 2,
+  "slug": "dinar",
+  "title": "قصة مشروع دينار",
+  "titleEn": "Dinar Story",
+  "type": "قصة مشروع",
+  "tag": "قصة مشروع",
+  "client": "ثندر · إنفينيتي",
+  "clientFull": "ثندر (إنفينيتي)",
+  "year": "٢٠٢٦",
+  "duration": "١:٤٠ دقيقة",
+  "tools": "After Effects · Premiere",
+  "orientation": "v",
+  "orientationLabel": "عمودي ٩:١٦",
+  "ratio": 0.5624,
+  "vimeo": "1247007710",
+  "behance": "https://www.behance.net/gallery/258540707/-Dinar-Story-Motion-Design",
+  "about": "واجهات وتايبوغرافي متحرك يمشي على إيقاع التعليق الصوتي والمؤثرات.",
+  "aboutEn": "UI animation and kinetic typography paced to the voice-over and sound effects.",
+  "filters": [
+    "stories",
+    "ui",
+    "reels"
+  ],
+  "skills": [
+    "Motion Graphics",
+    "UI Animation",
+    "Kinetic Typography",
+    "Sound Design"
+  ],
+  "ticker": [
+    "قصة مشروع",
+    "واجهات",
+    "تايبوغرافي",
+    "تعليق صوتي",
+    "دينار"
+  ],
+  "color": "#F04E14",
+  "ink": "#151312",
+  "thumb": "/media/thumbs/dinar.jpg",
+  "clip": "/media/dinar/intro.mp4",
+  "clipPoster": "/media/dinar/posters/intro.jpg",
+  "slides": [
+    {
+      "video": "/media/dinar/slides/flow.mp4",
+      "poster": "/media/dinar/slides/flow.jpg",
+      "w": 1200,
+      "h": 258
+    },
+    {
+      "video": "/media/dinar/slides/colors.mp4",
+      "poster": "/media/dinar/slides/colors.jpg",
+      "w": 1200,
+      "h": 686
+    },
+    {
+      "video": "/media/dinar/slides/timeline.mp4",
+      "poster": "/media/dinar/slides/timeline.jpg",
+      "w": 1200,
+      "h": 600
+    },
+    {
+      "video": "/media/dinar/slides/sound.mp4",
+      "poster": "/media/dinar/slides/sound.jpg",
+      "w": 1200,
+      "h": 582
+    },
+    {
+      "video": "/media/dinar/slides/stack.mp4",
+      "poster": "/media/dinar/slides/stack.jpg",
+      "w": 1200,
+      "h": 514
+    },
+    {
+      "video": "/media/dinar/slides/strip.mp4",
+      "poster": "/media/dinar/slides/strip.jpg",
+      "w": 1200,
+      "h": 514
+    },
+    {
+      "video": "/media/dinar/slides/phones.mp4",
+      "poster": "/media/dinar/slides/phones.jpg",
+      "w": 1200,
+      "h": 686
+    }
+  ],
+  "gallery": [
+    {
+      "video": "/media/dinar/intro.mp4",
+      "poster": "/media/dinar/posters/intro.jpg"
+    },
+    {
+      "video": "/media/dinar/people.mp4",
+      "poster": "/media/dinar/posters/people.jpg"
+    },
+    {
+      "video": "/media/dinar/board.mp4",
+      "poster": "/media/dinar/posters/board.jpg"
+    },
+    {
+      "video": "/media/dinar/chat.mp4",
+      "poster": "/media/dinar/posters/chat.jpg"
+    },
+    {
+      "video": "/media/dinar/type.mp4",
+      "poster": "/media/dinar/posters/type.jpg"
+    },
+    {
+      "video": "/media/dinar/edit.mp4",
+      "poster": "/media/dinar/posters/edit.jpg"
+    },
+    {
+      "video": "/media/dinar/close.mp4",
+      "poster": "/media/dinar/posters/close.jpg"
+    }
+  ],
+  "frames": [
+    "/media/dinar/frames/f_3.jpg",
+    "/media/dinar/frames/f_10.jpg",
+    "/media/dinar/frames/f_14.jpg",
+    "/media/dinar/frames/f_22.jpg",
+    "/media/dinar/frames/f_30.jpg",
+    "/media/dinar/frames/f_38.jpg",
+    "/media/dinar/frames/f_46.jpg",
+    "/media/dinar/frames/f_54.jpg",
+    "/media/dinar/frames/f_60.jpg",
+    "/media/dinar/frames/f_66.jpg",
+    "/media/dinar/frames/f_74.jpg",
+    "/media/dinar/frames/f_80.jpg",
+    "/media/dinar/frames/f_86.jpg",
+    "/media/dinar/frames/f_95.jpg"
+  ]
+}

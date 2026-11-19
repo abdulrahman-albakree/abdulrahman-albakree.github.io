@@ -1,0 +1,32 @@
+{
+  "clients": [
+    {
+      "name": "Thunder Production",
+      "logo": "/media/clients/thunder.png",
+      "w": 360,
+      "h": 100
+    },
+    {
+      "name": "Infinity E-Marketing",
+      "logo": "/media/clients/infinity.png",
+      "w": 360,
+      "h": 86
+    },
+    {
+      "name": "Zohal Film Production",
+      "logo": "/media/clients/zohal.png",
+      "w": 360,
+      "h": 163
+    },
+    {
+      "name": "Smart soft",
+      "logo": "/media/clients/smartsoft.png",
+      "w": 360,
+      "h": 111
+    },
+    {
+      "name": "جامعة الريادة",
+      "logo": ""
+    }
+  ]
+}
